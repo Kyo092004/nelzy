@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Love Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { font-family: 'Bookman Old Style', serif; box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #000, #444);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #f5f5f5;
+      animation: fadeIn 1.5s ease;
+      padding: 20px; /* space around container */
+      overflow-y: auto; /* allow scrolling */
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      animation: slideUp 1.2s ease;
+    }
+
+    h1 { 
+      margin-bottom: 20px; 
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #fff; /* original white button */
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 20px; }
+      p { font-size: 16px; }
+      a {
+        padding: 10px 20px;
+        font-size: 15px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nelzy Mane B. Pueblos🖤</h1>
+    <p>
+      Thank you for giving me a shot, for opening your world and introducing me to your friends and family.  
+      Thank you for the unconditional and unexpected love you’ve shown me, it’s something I never imagined I’d be blessed with.  
+      You’ve made me feel welcomed, cared for, and truly special in ways I can’t fully explain.  
+      I want you to know how much I appreciate everything you’ve done for me and how much I treasure these moments with you.
+    </p>
+    <p>Yours always and endlessly,<br>🖤 Your Bossing</p>
+    <a href="gallery.html">→ See Our Memories</a>
+  </div>
+</body>
+</html>

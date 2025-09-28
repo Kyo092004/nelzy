@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { font-family: 'Bookman Old Style', serif; box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #111, #333);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #eee;
+      animation: fadeIn 1.5s ease;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      text-align: center;
+      animation: slideUp 1.2s ease;
+    }
+
+    h1 { margin-bottom: 20px; }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      height: 330px;
+    }
+
+    .carousel-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .carousel-item.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 16px;
+      font-style: italic;
+      color: #ccc;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .controls { margin-top: 15px; }
+
+    .controls button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .controls button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Pretty Bossing🖤</h1>
+
+    <div class="carousel">
+      <div class="carousel-item active">
+        <img src="nel.jpg" alt="1">
+        
+      </div>
+      <div class="carousel-item">
+        <img src="nel1.jpg" alt="2">
+        
+      </div>
+      <div class="carousel-item">
+        <img src="nel2.jpg" alt="3">
+        
+      </div>
+      <div class="carousel-item">
+        <img src="nel3.jpg" alt="4">
+        </div>
+      <div class="carousel-item">
+        <img src="nel4.jpg" alt="5">
+        </div>
+    </div>
+
+    <a href="final.html">→ One More Thing 🖤...</a>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.carousel-item');
+    let current = 0;
+
+    function showItem(index) {
+      items.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % items.length;
+      showItem(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + items.length) % items.length;
+      showItem(current);
+    }
+
+    setInterval(nextImage, 4000);
+  </script>
+</body>
+</html>

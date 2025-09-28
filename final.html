@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { font-family: 'Bookman Old Style', serif; box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #111, #333);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #eee;
+      animation: fadeIn 1.5s ease;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 750px;
+      background: rgba(255,255,255,0.05);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      text-align: center;
+      animation: slideUp 1.2s ease;
+    }
+
+    h1 { margin-bottom: 20px; }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      max-width: 420px;  /* keeps images neat in center */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .carousel-item {
+      display: none;
+      text-align: center;
+    }
+
+    .carousel-item.active {
+      display: block;
+      animation: fadeSlide 1s ease;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;   /* keeps aspect ratio */
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+
+    .controls { margin-top: 15px; }
+
+    .controls button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .controls button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .letter {
+      margin-top: 15px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #ddd;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To my Nelzy🖤</h1>
+
+    <div class="carousel">
+      <div class="carousel-item active">
+        <img src="nel5.jpg" alt="Moment 1">
+      </div>
+      <div class="carousel-item">
+        <img src="nel6.jpg" alt="Moment 2">
+      </div>
+      <div class="carousel-item">
+        <img src="nel7.jpg" alt="Moment 3">
+      </div>
+    </div>
+
+    <div class="letter">
+      <p>
+        I hope you don’t change and stay the same as always.  
+        The person you are now is someone I truly admire and care about deeply.  
+        When the time is right, I’ll confess everything  
+        that I like you, and that I love you. 🖤
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.carousel-item');
+    let current = 0;
+
+    function showItem(index) {
+      items.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % items.length;
+      showItem(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + items.length) % items.length;
+      showItem(current);
+    }
+
+    setInterval(nextImage, 4000);
+  </script>
+</body>
+</html>
